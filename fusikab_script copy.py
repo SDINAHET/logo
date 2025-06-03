@@ -11,10 +11,10 @@ font = "Arial-Bold"
 scene1_logo = (
     ImageClip(logo_path)
     .resize(height=400)
-    .resize(4)  # ×3 la taille actuelle
+    # .resize(3)  # ×3 la taille actuelle
     .set_position("center")
     .fadein(1.2)
-    .resize(lambda t: 1 + 0.10 * t)  # subtle zoom-in
+    .resize(lambda t: 1 + 0.02 * t)  # subtle zoom-in
     .set_duration(4)
     .on_color(size=video_size, color=(0, 0, 0), pos="center")
 )
@@ -28,7 +28,7 @@ headline = (
 )
 
 subline = (
-    TextClip("DJ Evènementiel et soirées privées", fontsize=50, color="white", font=font)
+    TextClip("DJ & Show Lights", fontsize=50, color="white", font=font)
     .set_position(("center", 650))
     .set_duration(3.5)
     .fadein(0.8)
@@ -59,10 +59,10 @@ scene3 = CompositeVideoClip([scene3_bg, call_text, insta])
 scene4_logo = (
     ImageClip(logo_path)
     .resize(height=400)
-    .resize(4)  # ×3 la taille actuelle
+    # .resize(3)  # ×3 la taille actuelle
     .set_duration(3.5)
     .fadein(0.3)
-    .resize(lambda t: 1.05 + 0.10 * (t % 0.5))  # pulse effect
+    .resize(lambda t: 1.05 + 0.02 * (t % 0.5))  # pulse effect
     .set_position("center")
     .on_color(size=video_size, color=(0, 0, 0), pos="center")
 )
