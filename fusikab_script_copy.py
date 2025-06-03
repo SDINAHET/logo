@@ -3,7 +3,7 @@ import os
 
 # Configuration
 video_size = (1080, 1080)
-duration = 20  # in seconds
+duration = 6  # in seconds
 logo_path = "FUSIKABDJ+noir-9aba294e-1920w.webp"
 font = "Arial-Bold"
 
@@ -14,22 +14,22 @@ scene1_logo = (
     .set_position("center")
     .fadein(1.2)
     .resize(lambda t: 1 + 0.02 * t)  # subtle zoom-in
-    .set_duration(4)
+    .set_duration(2)
     .on_color(size=video_size, color=(0, 0, 0), pos="center")
 )
 
 # Scene 2: Text drop effect for "FUSIKABDJ - DJ & Show Lights"
 headline = (
-    TextClip("FUSIKAB DJ", fontsize=100, color="white", font=font)
+    TextClip("FUSIKABDJ", fontsize=100, color="white", font=font)
     .set_position(("center", "center"))
-    .set_duration(3.5)
+    .set_duration(1.5)
     .fadein(0.5)
 )
 
 subline = (
     TextClip("DJ & Show Lights", fontsize=50, color="white", font=font)
     .set_position(("center", 650))
-    .set_duration(3.5)
+    .set_duration(1.5)
     .fadein(0.8)
 )
 
@@ -40,14 +40,14 @@ scene2 = CompositeVideoClip([scene2_bg, headline, subline])
 call_text = (
     TextClip("Dispo pour vos événements", fontsize=65, color="white", font=font)
     .set_position(("center", 400))
-    .set_duration(4)
+    .set_duration(2)
     .fadein(0.8)
 )
 
 insta = (
     TextClip("@fusikabdj", fontsize=60, color="white", font=font)
     .set_position(("center", 850))
-    .set_duration(4)
+    .set_duration(2)
     .fadein(1.0)
 )
 
@@ -58,7 +58,7 @@ scene3 = CompositeVideoClip([scene3_bg, call_text, insta])
 scene4_logo = (
     ImageClip(logo_path)
     .resize(height=400)
-    .set_duration(3.5)
+    .set_duration(1.5)
     .fadein(0.3)
     .resize(lambda t: 1.05 + 0.02 * (t % 0.5))  # pulse effect
     .set_position("center")
